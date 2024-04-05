@@ -22,9 +22,9 @@ export default function Todo() {
       {todolist.map(x =>
         <h5>
           {x.task} {
-            x.priority == 1 ? <Badge bg="danger">1</Badge>
-              : x.priority == 2 ? <Badge bg="warning">2</Badge>
-                : x.priority == 3 ? <Badge bg="info">3</Badge>
+            x.priority === 1 ? <Badge bg="danger">1</Badge>
+              : x.priority === 2 ? <Badge bg="warning">2</Badge>
+                : x.priority === 3 ? <Badge bg="info">3</Badge>
                   : <Badge bg="success">4</Badge>}
         </h5>)}
 

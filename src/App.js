@@ -27,8 +27,10 @@ function App() {
           </Routes>
         </div>
 
-        <Cats/>
-        <CallingCard id="tortuga" itemName="tortuga" imgSrc="https://d2c79xe1p61csc.cloudfront.net/frames/mf_tortuga.png" description="This is not a cat" />
+        <Cats />
+        <Row>
+          <CallingCard id="tortuga" itemName="tortuga" imgSrc="https://d2c79xe1p61csc.cloudfront.net/frames/mf_tortuga.png" description="This is not a cat" />
+        </Row>
       </Container>
     </>
   );

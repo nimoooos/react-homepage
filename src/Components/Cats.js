@@ -1,4 +1,4 @@
-import { Row, Col } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import CallingCard from "../Subcomponents/CallingCard"
 
 export default function Cats() {
