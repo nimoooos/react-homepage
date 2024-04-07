@@ -5,15 +5,10 @@ export default function Todo() {
   let todolist = [];
   todolist.push({ task: "Make something fun and interesting (good for my mental health)", priority: 2 });
   todolist.push({ task: "Do something else with navbar", priority: 2 });
-  todolist.push({ task: "Change website title and icon and stuff", priority: 3 });
-  todolist.push({ task: "Create assets for calling cards", priority: 3 });
+  todolist.push({ task: "Change website title and icon and stuff", priority: 1 });
   todolist.push({ task: "Set up resume", priority: 4 });
-  todolist.push({ task: "Celebrate with rice wine", priority: 4 });
-  todolist.push({ task: "Host it on Cloudflare", priority: 2 });
-  todolist.push({ task: "Rebuild app with create-cloudflare CLI", priority: 1 });
-  todolist.push({ task: "Seriously, if I don't do this first, I WILL regret it", priority: 1 });
-  todolist.push({ task: "Make an icon", priority: 3 });
-  todolist.push({ task: "Automate hosting", priority: 3 });
+  todolist.push({ task: "Celebrate with rice wine", priority: 3 });
+  todolist.push({ task: "Make an icon", priority: 2 });
 
 
   todolist.sort((a,b)=>a.priority-b.priority);
