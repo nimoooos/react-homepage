@@ -10,6 +10,7 @@ import Navi from './Subcomponents/Navi';
 import CallingCard from "./Subcomponents/CallingCard";
 import Todo from './Components/Todo';
 import Cats from './Components/Cats';
+import Dogs from "./Components/Dogs";
 import Games from "./Components/Games";
 
 import './App.css';
@@ -28,6 +29,7 @@ function App() {
         </div>
 
         <Cats />
+        <Dogs />
         <Games />
         <Row>
           <CallingCard id="tortuga" url="https://massif-press.itch.io/corebook-pdf-free" itemName="IPS-N Tortuga" imgSrc="https://d2c79xe1p61csc.cloudfront.net/frames/mf_tortuga.png" description="This is not a cat" />
