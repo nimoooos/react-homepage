@@ -11,7 +11,7 @@ export default function CallingCard(props) {
   */
   return (
     <>
-      <Card id={props.id} className="col-md-4 p-0 m-3" style={{ width: "300px" }}>
+      <Card id={props.id} className="m-3" style={{ width: "300px" }}>
         <Link to={props.url} className="text-reset text-decoration-none">
           <Card.Img variant="top" src={props.imgSrc} />
           <Card.Body >
