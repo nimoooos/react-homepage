@@ -6,11 +6,13 @@ export default async function AxiosAPI(props) {
     // props.package
 
 
-    // const response = (await axios.get(props.url))
-    // .then(res=>{
-    //     const persons = res.data;
-    //     this.setState
-    // });
-    // return response;
+    axios.get(`${props.url}`)
+    .then(response => {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch(error => {
+      console.error('Error fetching data: ', error);
+    })
 
 }
