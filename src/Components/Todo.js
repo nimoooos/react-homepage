@@ -4,6 +4,8 @@ import Badge from 'react-bootstrap/Badge';
 export default function Todo() {
   let todolist = [];
   todolist.push({ task: "Make something fun and interesting (good for my mental health)", priority: 2 });
+  todolist.push({ task: "Add dog api with Axios", priority: 1 });
+  
   todolist.push({ task: "Do something else with navbar", priority: 2 });
   todolist.push({ task: "Change website title and icon and stuff", priority: 1 });
   todolist.push({ task: "Set up resume", priority: 4 });
