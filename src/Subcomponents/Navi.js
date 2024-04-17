@@ -14,7 +14,6 @@ export default function Navi() {
             <Nav.Link href="https://github.com/nimoooos">Github</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#todolist">To Do List</NavDropdown.Item>
-              <NavDropdown.Item href="#tortuga">Tortuga</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/">
                 Refresh Page

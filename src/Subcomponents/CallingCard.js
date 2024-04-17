@@ -11,8 +11,8 @@ export default function CallingCard(props) {
   */
   return (
     <>
-    <Link to={props.url} style={{"text-decoration":"none"}}>
-      <Card id={props.id} className="col-md-4 p-0 m-3" style={{ width: "300px" }}>
+
+      <Card to={props.url} id={props.id} className="col-md-4 p-0 m-3" style={{ width: "18rem" }}>
         <Card.Img variant="top" src={props.imgSrc} />
         <Card.Body>
           <Card.Title className="text-center">{props.itemName}</Card.Title>
@@ -20,8 +20,8 @@ export default function CallingCard(props) {
             {props.description}
           </Card.Text>
         </Card.Body>
+        <a href={props.url} class="stretched-link"></a>
       </Card>
-      </Link>
     </>
   );
 }
