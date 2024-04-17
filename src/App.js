@@ -11,7 +11,6 @@ import CallingCard from "./Subcomponents/CallingCard";
 import Todo from './Components/Todo';
 import Cats from './Components/Cats';
 import Games from "./Components/Games";
-import CatOrDog from "./Components/CatOrDog";
 
 import './App.css';
 
@@ -30,7 +29,6 @@ function App() {
 
         <Cats />
         <Games />
-
       </Container>
     </>
   );
