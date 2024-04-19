@@ -1,5 +1,4 @@
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 
 export default function CallingCard(props) {
   /*
@@ -18,9 +17,10 @@ export default function CallingCard(props) {
           <Card.Title className="text-center">{props.itemName}</Card.Title>
           <Card.Text>
             {props.description}
+            <p><small><a href={props.url} class="stretched-link">Links to {props.url}</a></small></p>
           </Card.Text>
         </Card.Body>
-        <a href={props.url} class="stretched-link"></a>
+        
       </Card>
     </>
   );
