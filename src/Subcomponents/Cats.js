@@ -1,5 +1,5 @@
 import { Row } from "react-bootstrap"
-import CallingCard from "../Subcomponents/CallingCard"
+import CallingCard from "./CallingCard"
 
 export default function Cats() {
     return (
