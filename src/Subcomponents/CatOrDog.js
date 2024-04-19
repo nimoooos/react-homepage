@@ -1,4 +1,4 @@
-import CallingCard from "../Subcomponents/CallingCard"
+import CallingCard from "./CallingCard"
 
 export default function CatOrDog(props) {
     console.log(props);

@@ -1,5 +1,4 @@
 import { Row } from "react-bootstrap"
-import CallingCard from "../Subcomponents/CallingCard"
 
 import CatOrDog from "./CatOrDog"
 
