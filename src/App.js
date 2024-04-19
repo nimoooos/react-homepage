@@ -9,6 +9,7 @@ import './App.css';
 //Component import
 import Navi from './Subcomponents/Navi';
 import HomeRoute from "./Components/HomeRoute";
+import DiscordArbitrationRoute from "./Components/DiscordArbitrationRoute";
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <div className="AppRouter">
           <Routes>
             <Route path="/" element={<HomeRoute/>} />
+            <Route path="/discord-arbitration" element={<DiscordArbitrationRoute/>} />
           </Routes>
         </div>
       </Container>
