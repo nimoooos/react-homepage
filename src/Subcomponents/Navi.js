@@ -15,6 +15,7 @@ export default function Navi() {
             <Nav.Link href="https://github.com/nimoooos">Github</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item><Link to="/discord-arbitration">Discord Arbitration</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/line-of-sight">Line of Sight</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/">
                 Refresh Page
