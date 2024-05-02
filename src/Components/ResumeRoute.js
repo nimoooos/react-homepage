@@ -1,30 +1,46 @@
 import { Chrono } from "react-chrono";
 import { Link } from "react-router-dom";
+import '../css/Resume.css'
 
 export default function ResumeRoute() {
     return (
         <>
-            <h1>Resume</h1>
+            <div className="todo">
+                <h1>TODO</h1>
+                <li>Turn entries into reusable components</li>
+                <li>Implement CSS for said components</li>
+                <li>Make contact info section smaller</li>
+            </div>
+
+            <h1>Soomin Song</h1>
+            <p>Wahiawa, HI 96786 | XXX-XXX-XXXX</p>
+            <p><a target="_blank" rel="noreferrer" href="mailto:song.soomin.teapot418@gmail.com">song.soomin.teapot418@gmail.com</a></p>
+            <p><a href="https://nimoooos.work">https://nimoooos.work</a></p>
+
+
             <h2>Experiences</h2>
+            <hr/>
             <h4>Full Stack Developer - Lightning Labs (Jul 2023 - Current)</h4>
 
 
             <h2>Projects</h2>
+            <hr/>
             <h4>
-                Tropic Lightning Week Homepage: Development Lead
+                Tropic Lightning Week Homepage
                 <Link to="https://github.com/nimoooos/Guadalcanal-Cup-Scoring"><img alt="Guadalcanal-Cup-Scoring Repository" src="https://img.shields.io/badge/GitHub-black" /></Link>
             </h4>
             <h6>Python (Flask), SQL (Postgres), HTML (CSS, bootstrap, Javascript), GitHub, render.com</h6>
+            <h5>Development Lead</h5>
             <p>Developed a web-based scoring application for managing scores in a sports tournament involving 20 teams and 18 events. Implemented CRUD operations and score calculation algorithms based on team placements and event weights. Identified bottleneck and optimized load time by implementing snapshotting for database access, resulting in an 85% reduction in load time. Implemented CSV export functionality for quick and easy data backup and sharing.
             </p>
 
 
             <h4>
-                COMP/CON: Contributor
-                <Link to="https://github.com/massif-press/compcon/pull/2357"><img alt="COMP/CON Pull Request" src="https://img.shields.io/badge/GitHub-black" /></Link>
+                COMP/CON
+                <Link to="https://github.com/massif-press/compcon/pull/2357"><img alt="COMP/CON Pull Request" src="https://img.shields.io/badge/GitHub-Pull_Request-Black" /></Link>
             </h4>
-
             <h6>Javascript(TypeScript, Vue), Node.js, GitHub</h6>
+            <h5>Contributor</h5>
             <p>Enhanced the open-source project COMP/CON (a companion app for LANCER RPG) by implementing a feature that provides detailed description in NPC export, while preserving original functionality. This streamlined user experience for players by reducing the need to reference an external source during gameplay.</p>
 
 
