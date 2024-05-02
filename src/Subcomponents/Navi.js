@@ -13,8 +13,8 @@ export default function Navi() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="https://github.com/nimoooos">Github</Nav.Link>
+            <Link to="/discord-arbitration">Discord Arbitration</Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to="/discord-arbitration">Discord Arbitration</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/">
                 Refresh Page
