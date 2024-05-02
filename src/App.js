@@ -11,6 +11,7 @@ import Navi from './Subcomponents/Navi';
 import HomeRoute from "./Components/HomeRoute";
 import DiscordArbitrationRoute from "./Components/DiscordArbitrationRoute";
 import LineOfSight from "./Components/LineOfSight";
+import ResumeRoute from "./Components/ResumeRoute";
 
 
 
@@ -25,6 +26,8 @@ function App() {
             <Route path="/" element={<HomeRoute/>} />
             <Route path="/discord-arbitration" element={<DiscordArbitrationRoute/>} />
             <Route path="/line-of-sight" element={<LineOfSight/>} />
+            <Route path="/resume" element={<ResumeRoute/>} />
+            
           </Routes>
         </div>
       </Container>

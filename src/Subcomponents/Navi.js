@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 export default function Navi() {
@@ -12,7 +13,8 @@ export default function Navi() {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="https://github.com/nimoooos">Github</Nav.Link>
+            <Nav.Link href="https://github.com/nimoooos"><Button variant="secondary">Github</Button></Nav.Link>
+            {/* <Nav.Item><Link to="/resume"><Button variant="secondary">Resume</Button></Link></Nav.Item> */}
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item><Link to="/discord-arbitration">Discord Arbitration</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/line-of-sight">Line of Sight</Link></NavDropdown.Item>
