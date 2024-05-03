@@ -14,8 +14,6 @@ import LineOfSight from "./Components/LineOfSight";
 import ResumeRoute from "./Components/ResumeRoute";
 
 
-
-
 function App() {
   return (
     <>

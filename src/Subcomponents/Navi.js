@@ -13,16 +13,28 @@ export default function Navi() {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="https://github.com/nimoooos"><Button variant="secondary">Github</Button></Nav.Link>
+            <Nav.Link href="https://github.com/nimoooos">
+              <Button variant="secondary-outline">Github</Button>
+              </Nav.Link>
             {/* <Nav.Item><Link to="/resume"><Button variant="secondary">Resume</Button></Link></Nav.Item> */}
+            <Button variant="secondary-outline">
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to="/discord-arbitration">Discord Arbitration</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/line-of-sight">Line of Sight</Link></NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/discord-arbitration">
+                  <Button variant="secondary-outline">Discord Arbitration</Button>
+                  </Link>
+                  </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/line-of-sight">
+                  <Button variant="secondary-outline">Line of Sight</Button>
+                  </Link>
+                  </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/">
                 Refresh Page
               </NavDropdown.Item>
             </NavDropdown>
+            </Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
