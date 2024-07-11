@@ -1,22 +1,32 @@
 h1{
-    color:red;
+    color:black;
 }
 
 h2{
     color:black;
+    font-weight: 600;
 }
 
-h4{
+h3{
+    color: black;
+    font-weight: 600;
+}
+
+.project{
     color:black;
-    font-weight: bolder;
+    font-weight: 600;
 }
 
-h5{
-    color:darkblue;
-    font-weight: bold;
-}
-
-h6{
+.jobTitle{
     color:black;
-    font-weight: bold;
+}
+
+.techStack {
+    color:darkgray;
+    font-weight: 600;
+    font-size: smaller;
+}
+
+.contact-info {
+    font-size: smaller;
 }

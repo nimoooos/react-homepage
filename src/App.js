@@ -1,5 +1,5 @@
 //Use for AppRouter
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 
 //react-bootstrap import
 import Container from 'react-bootstrap/Container';
