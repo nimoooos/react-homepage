@@ -10,7 +10,8 @@ import { useState } from 'react';
 export default function LineOfSight() {
     const [xAxis, setXAxis] = useState(15);
     const [yAxis, setYAxis] = useState(15);
-    const [tileSize, setTileSize] = useState(50);
+    // const [tileSize, setTileSize] = useState(50);
+    const tileSize=50;
 
     return (
         <>
