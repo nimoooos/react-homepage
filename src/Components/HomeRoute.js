@@ -7,7 +7,7 @@ export default function HomeRoute() {
         <>
             <h1>Hello,</h1>
             <p>Welcome to my homepage. It's still under construction!</p>
-            <Link to="/resume"><Button className='my-2'>Resume</Button></Link>
+            <Link to="/projects"><Button className='my-2'>Resume</Button></Link>
             <Cats/>
         </>
         )

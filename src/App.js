@@ -24,7 +24,7 @@ function App() {
             <Route path="/" element={<HomeRoute/>} />
             <Route path="/discord-arbitration" element={<DiscordArbitrationRoute/>} />
             <Route path="/line-of-sight" element={<LineOfSight/>} />
-            <Route path="/resume" element={<ResumeRoute/>} />
+            <Route path="/projects" element={<ResumeRoute/>} />
             
           </Routes>
         </div>

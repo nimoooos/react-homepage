@@ -16,7 +16,7 @@ export default function Navi() {
             <Nav.Link href="https://github.com/nimoooos">
               <Button variant="secondary">Github</Button>
             </Nav.Link>
-            <Nav.Item><Link to="/resume"><Button className='my-2'>Resume</Button></Link></Nav.Item>
+            <Nav.Item><Link to="/projects"><Button className='my-2'>Resume</Button></Link></Nav.Item>
             <Button variant="secondary-outline">
               <NavDropdown className="d-none" title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item>
