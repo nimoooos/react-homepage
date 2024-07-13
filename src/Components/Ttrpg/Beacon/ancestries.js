@@ -3,7 +3,7 @@ export const ancestries = {
     Cambion: { name:"Cambion", size: 1, traits: [{ name: "traitName", effect: "traitEffect" }] },
     Draken: { name:"Draken", size: 2, traits: [{ name: "traitName", effect: "traitEffect" }] },
     Dwarf: { name:"Dwarf", size: 1, traits: [{ name: "traitName", effect: "traitEffect" }] },
-    Elementals: { name:"Elementals", size: 1, traits: [{ name: "traitName", effect: "traitEffect" }] },
+    Elemental: { name:"Elemental", size: 1, traits: [{ name: "traitName", effect: "traitEffect" }] },
     Elf: { name:"Elf", size: 1, traits: [{ name: "traitName", effect: "traitEffect" }] },
     Gigan: { name:"Gigan", size: 2, traits: [{ name: "traitName", effect: "traitEffect" }] },
     Gnome: { name:"Gnome", size: 1 / 2, traits: [{ name: "traitName", effect: "traitEffect" }] },

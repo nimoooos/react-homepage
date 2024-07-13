@@ -18,8 +18,21 @@ export default function Beacon() {
     const nameChangeHandler = (event) => { setCharMoniker({ name: event.target.value, pronouns: charMoniker.pronouns, title: charMoniker.title }); }
     const pronounChangeHandler = (event) => { setCharMoniker({ pronouns: event.target.value, name: charMoniker.name, title: charMoniker.title }); }
     const titleChangeHandler = (event) => { setCharMoniker({ title: event.target.value, name: charMoniker.name, pronouns: charMoniker.pronouns }); }
-    const ancestryChangeHandler = (event) => { setCharAncestry(ancestriesObject[event.target.value]) }
-    const jobChangeHandler = (event) => { setCharJob(jobsObject[event.target.value]); console.log(charJob) }
+    const ancestryChangeHandler = (event) => {
+        if (ancestriesObject[event.target.value]) {
+            setCharAncestry(ancestriesObject[event.target.value])
+        } else {
+            console.log("Unknown ancestry selected.");
+        }
+    }
+    const jobChangeHandler = (event) => {
+        if (jobsObject[event.target.value]) {
+            setCharJob(jobsObject[event.target.value])
+        } else {
+            console.log("Unknown job selected.")
+        }
+
+    }
 
     return (
         <>
@@ -34,21 +47,23 @@ export default function Beacon() {
                     </div>
 
                     <h4>Level {charStat.level} {charAncestry.name} {charJob.name}</h4>
-                    <InputGroup>
+                    <InputGroup className='p-1'>
                         <Form.Select aria-label='Ancestry' onChange={ancestryChangeHandler}>
                             <option value={null}>Select Ancestry</option>
                             {Object.keys(ancestriesObject).map((ancestry) => {
                                 return <option value={ancestry}>{ancestry}</option>
                             })}
-                            <option value="custom">Custom</option>
                         </Form.Select>
+                        {/* <Form.Control type="text" placeholder={charAncestry.name} /> */}
+                        {/* </InputGroup>
+                    <InputGroup className='p-1'> */}
                         <Form.Select aria-label='Job' onChange={jobChangeHandler}>
                             <option value={null}>Select a Job</option>
                             {Object.keys(jobsObject).map((job) => {
                                 return <option value={job}>{job}</option>
                             })}
-                            <option value="custom">Custom</option>
                         </Form.Select>
+                        {/* <Form.Control type="text" placeholder={charJob.name}/> */}
                     </InputGroup>
                 </Form.Group>
 
