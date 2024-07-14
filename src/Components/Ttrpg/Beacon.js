@@ -6,10 +6,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { InputGroup } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 //Data files
-import { jobsData, ancestriesData } from './Beacon/data';
+import { jobsData, ancestriesData, jobTraitsData } from './Beacon/data';
 
 export default function Beacon() {
     // Importing data
@@ -46,52 +48,7 @@ export default function Beacon() {
 
     const [nameBoxVisible, setNameBoxVisible] = useState(false);
 
-    useEffect(calculateAttributes,[charLevel,charJob,charAbilityScores])
-
-    //State change handlers
-    const nameChangeHandler = (event) => {
-        let moniker = { name: charMoniker.name, pronouns: charMoniker.pronouns, title: charMoniker.title }
-        moniker.name = event.target.value;
-        setCharMoniker(moniker);
-    }
-    const pronounChangeHandler = (event) => {
-        let moniker = { name: charMoniker.name, pronouns: charMoniker.pronouns, title: charMoniker.title }
-        moniker.pronouns = event.target.value;
-        setCharMoniker(moniker);
-    }
-    const titleChangeHandler = (event) => {
-        let moniker = { name: charMoniker.name, pronouns: charMoniker.pronouns, title: charMoniker.title }
-        moniker.title = event.target.value;
-        setCharMoniker(moniker);
-    }
-    const levelChangeHandler = (event) => {
-        const newLevel = event.target.value;
-        if (newLevel < 1 || newLevel > 12) {
-            console.log("Attempted to set to an invalid level value.");
-        } else {
-            setCharLevel(newLevel);
-        }
-    }
-    const ancestryChangeHandler = (event) => {
-        if (ancestries[event.target.value]) {
-            setCharAncestry(ancestries[event.target.value])
-
-            //change character size automatically based on ancestry
-            setCharSize(ancestries[event.target.value].size)
-        } else {
-            console.log("Unknown ancestry selected.");
-        }
-    }
-    const jobChangeHandler = (event) => {
-        if (jobs[event.target.value]) {
-            let newJob = jobs[event.target.value];
-            setCharJob(newJob);
-        } else {
-            console.log("Unknown job selected.");
-        }
-    }
-
-    //helpful macros
+    useEffect(calculateAttributes, [charLevel, charJob, charAbilityScores])
     function calculateAttributes() {
         /**
          * Recalculate all attributes based on level, job, BAMM, etc.
@@ -116,11 +73,80 @@ export default function Beacon() {
         newAttributes.hp += newAttributes.grit;
         newAttributes.saveTarget += newAttributes.grit;
         newAttributes.memory += newAttributes.grit;
-        
+
         setCharAttributes(newAttributes);
     }
 
+    //State change handlers
+    const nameChangeHandler = (event) => { setCharMoniker({ ...charMoniker, name: event.target.value }); }
+    const pronounChangeHandler = (event) => { setCharMoniker({ ...charMoniker, pronouns: event.target.value }); }
+    const titleChangeHandler = (event) => { setCharMoniker({ ...charMoniker, title: event.target.value }); }
+    const levelChangeHandler = (event) => {
+        const newLevel = event.target.value;
+        if (newLevel < 1 || newLevel > 12) {
+            console.log("Attempted to set to an invalid level value.");
+        } else {
+            setCharLevel(newLevel);
+        }
+    }
+    const ancestryChangeHandler = (event) => {
+        if (ancestries[event.target.value]) {
+            setCharAncestry(ancestries[event.target.value]);
+            setCharSize(ancestries[event.target.value].size);
+        } else {
+            console.log("Unknown ancestry selected.");
+        }
+    }
+    const jobChangeHandler = (event) => {
+        if (jobs[event.target.value]) {
+            setCharJob(jobs[event.target.value]);
+        } else {
+            console.log("Unknown job selected.");
+        }
+    }
+
     //render functions
+    function AbilityCard(props) {
+        const ability = props.ability;
+
+        let name = ability.name;
+        let type = (ability.type === "Action" ? ability.actionType : ability.type);
+        let tags = ability.tags;
+
+        const RenderTitleLine = () => (<Row><Col sm="9"><Card.Title>{name}</Card.Title></Col><Col sm="3"><Card.Subtitle>{type}</Card.Subtitle></Col></Row>)
+        const RenderTags = () => (tags ? <Row><Card.Text>{tags.map((x) => { return `[${x}]` })}</Card.Text></Row> : null)
+        const RenderText = () => {
+            let text = "";
+            if (type === "Reaction") {
+                text = `Trigger: ${ability.trigger}\nEffect: ${ability.effect}`;
+            } else {
+                text = ability.effect;
+            }
+
+            return (
+                <>
+                    {text.split("\n").map(x => {
+                        return <Card.Text>{x}</Card.Text>
+                    })}
+                </>
+            )
+        }
+
+        return (
+            <Card className='m-1' style={{ width: '26rem' }}>
+                <ListGroup variant="flush">
+                    <ListGroup.Item>
+                        <RenderTitleLine />
+                        <RenderTags />
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <RenderText />
+                    </ListGroup.Item>
+                </ListGroup>
+            </Card>
+        )
+    }
+
     function RenderAbilityScoreGroup() {
         const changeBulk = (event) => {
             let newValue = event.target.value;
@@ -154,6 +180,30 @@ export default function Beacon() {
                 </InputGroup>
             </>
 
+        )
+    }
+
+    function RenderAttributeGroup() {
+        return (
+            <>
+                <InputGroup id="attributes1">
+                    <InputGroup.Text>Grit</InputGroup.Text><Form.Control disabled value={Math.ceil(charLevel / 2)} type='number' />
+                    <InputGroup.Text>Scope</InputGroup.Text><Form.Control disabled value={charAttributes.scope} type='number' />
+                    <InputGroup.Text>Memory</InputGroup.Text><Form.Control disabled value={charAttributes.memory} type='number' />
+                    <InputGroup.Text>Save Target</InputGroup.Text><Form.Control disabled value={charAttributes.saveTarget} type='number' />
+                </InputGroup>
+                <InputGroup id="attributes2">
+                    <InputGroup.Text>HP</InputGroup.Text><Form.Control disabled value={charAttributes.hp} type='number' />
+                    <InputGroup.Text>Stress</InputGroup.Text><Form.Control disabled value={charAttributes.stresscap} type='number' />
+                    <InputGroup.Text>MP</InputGroup.Text><Form.Control disabled value={charAttributes.mp} type='number' />
+                    <InputGroup.Text>Recoveries</InputGroup.Text><Form.Control disabled value={charAttributes.recoveries} type='number' />
+                </InputGroup>
+                <InputGroup id="attributes3">
+                    <InputGroup.Text>Speed</InputGroup.Text><Form.Control disabled value={charAttributes.speed} type='number' />
+                    <InputGroup.Text>Dodge</InputGroup.Text><Form.Control disabled value={charAttributes.dodge} type='number' />
+                    <InputGroup.Text>A-Def</InputGroup.Text><Form.Control disabled value={charAttributes.adef} type='number' />
+                </InputGroup>
+            </>
         )
     }
 
@@ -222,28 +272,29 @@ export default function Beacon() {
                     </Col>
                     <Col>
                         <RenderAbilityScoreGroup />
-                        <InputGroup id="attributes1">
-                            <InputGroup.Text>Grit</InputGroup.Text><Form.Control disabled value={Math.ceil(charLevel / 2)} type='number' />
-                            <InputGroup.Text>Scope</InputGroup.Text><Form.Control disabled value={charAttributes.scope} type='number' />
-                            <InputGroup.Text>Memory</InputGroup.Text><Form.Control disabled value={charAttributes.memory} type='number' />
-                            <InputGroup.Text>Save Target</InputGroup.Text><Form.Control disabled value={charAttributes.saveTarget} type='number' />
-                        </InputGroup>
-                        <InputGroup id="attributes2">
-                            <InputGroup.Text>HP</InputGroup.Text><Form.Control disabled value={charAttributes.hp} type='number' />
-                            <InputGroup.Text>Stress</InputGroup.Text><Form.Control disabled value={charAttributes.stresscap} type='number' />
-                            <InputGroup.Text>MP</InputGroup.Text><Form.Control disabled value={charAttributes.mp} type='number' />
-                            <InputGroup.Text>Recoveries</InputGroup.Text><Form.Control disabled value={charAttributes.recoveries} type='number' />
-                        </InputGroup>
-                        <InputGroup id="attributes3">
-                            <InputGroup.Text>Speed</InputGroup.Text><Form.Control disabled value={charAttributes.speed} type='number' />
-                            <InputGroup.Text>Dodge</InputGroup.Text><Form.Control disabled value={charAttributes.dodge} type='number' />
-                            <InputGroup.Text>A-Def</InputGroup.Text><Form.Control disabled value={charAttributes.adef} type='number' />
-                        </InputGroup>
+                        <RenderAttributeGroup />
                     </Col>
                 </Row>
 
-                <Row>
-
+                <Row className='p-3'>
+                    <h3>Traits</h3>
+                    <AbilityCard ability={jobTraitsData["Abjurer's Ward"]} />
+                    <AbilityCard ability={jobTraitsData["Abjurer's Ward"].unlockedActions[0]} />
+                    <AbilityCard ability={jobTraitsData["Armiger"]} />
+                    <AbilityCard ability={jobTraitsData["Armiger"].unlockedActions[0]} />
+                    <AbilityCard ability={jobTraitsData["Demon Form"]} />
+                </Row>
+                <Row className="p-3">
+                    <h3>Weapons</h3>
+                </Row>
+                <Row className="p-3">
+                    <h3>Support Items</h3>
+                </Row>
+                <Row className="p-3">
+                    <h3>Techniques</h3>
+                </Row>
+                <Row className="p-3">
+                    <h3>Talents</h3>
                 </Row>
 
                 <Form.Group id="importExportGroup" className='m-1'>
@@ -251,7 +302,7 @@ export default function Beacon() {
                     <Button className='mx-1' onClick={exportCharacter}>Export to JSON</Button>
                     <Button className='mx-1' onClick={importCharacter}>Import from JSON</Button>
 
-                    <Form.Control className='my-1' as="textarea" rows={10} value="test"/>
+                    <Form.Control className='my-1' as="textarea" rows={10} value="test" />
                 </Form.Group>
             </Form>
         </>
