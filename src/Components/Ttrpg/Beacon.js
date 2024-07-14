@@ -126,14 +126,14 @@ export default function Beacon() {
             return (
                 <>
                     {text.split("\n").map(x => {
-                        return <Card.Text>{x}</Card.Text>
+                        return <Card.Text className='mb-2'>{x}</Card.Text>
                     })}
                 </>
             )
         }
 
         return (
-            <Card className='m-1' style={{ width: '26rem' }}>
+            <Card className='m-1' style={{ width: '25rem' }}>
                 <ListGroup variant="flush">
                     <ListGroup.Item>
                         <RenderTitleLine />
