@@ -27,7 +27,7 @@ export default function ResumeRoute() {
         {
             "projectName": "Electronic Training Resource Integration Council (eTRIC)",
             "repository": {
-                "link": "",
+                "link": "https://soldiersolutions.swf.army.mil/portfolio",
                 "imgAlt": "Decommissioned",
                 "imgSrc": "https://img.shields.io/badge/Decommissioned-red"
             },
@@ -67,7 +67,6 @@ export default function ResumeRoute() {
         },
         {
             "projectName": "Tropic Lightning Week Homepage",
-
             "repository": {
                 "link": "https://github.com/nimoooos/Guadalcanal-Cup-Scoring",
                 "imgAlt": "Guadalcanal-Cup-Scoring Repository",
@@ -87,7 +86,6 @@ export default function ResumeRoute() {
                 }
             ]
         },
-        
         {
             "projectName": "DFAC Dash",
             "repository": {
