@@ -58,9 +58,10 @@ export default function ResumeRoute() {
                     "longDescription": "Led development of PATRIC in accordance with regulatory and end user requirements. Utilized ODATA queries for data retrieval and implemented CRUD functionality for bids, enabling administrators and bidders to manage bids efficiently. Created user-friendly data visualization through consistent feedback cycle, facilitating resource management for 30 entities, including Joint Forces such as the US Army, Navy, Marines, and Air Force, encompassing over 300 ranges and providing visualization of bidding activities.",
                     "bulletPoints": [
                         "Led the development of PATRIC, ensuring compliance with regulatory and end-user requirements.",
-                        "Implemented ODATA queries and CRUD functionality for efficient bid management by administrators and bidders.",
-                        "Developed user-friendly data visualization through iterative feedback cycles.",
-                        "Facilitated resource management for 30 entities, including Joint Forces branches, overseeing visualization of bidding activities for over 300 ranges."
+                        "Implemented CRUD functionality through ODATA queries to enable bid management by administrators and bidders.",
+                        "Developed user-friendly data by integrating user feedback throughout development cycle.",
+                        "Facilitated resource management for 30 entities, including Joint Forces branches, overseeing visualization of bidding activities for over 300 ranges.",
+                        "Reduced meeting times by 93%, freeing up time for 50+ organizational representatives",
                     ]
                 }
             ]
@@ -119,7 +120,7 @@ export default function ResumeRoute() {
     ]
 
     return (
-        <div className="container container-md border border-secondary" style={stylesheet}>
+        <div className="my-5 container container-md border border-secondary" style={stylesheet}>
             <div className="todo d-none">
                 <h1>TODO</h1>
                 <li>Turn entries into reusable components</li>
