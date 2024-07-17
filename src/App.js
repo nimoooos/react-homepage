@@ -30,7 +30,6 @@ function App() {
               <Route index element={<h2>What are we playing today</h2>}/>
               <Route path="beacon" element={<Beacon/>} />
             </Route>
-            
           </Routes>
         </div>
       </Container>
