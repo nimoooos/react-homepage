@@ -128,7 +128,7 @@ export default function ResumeRoute() {
             </div>
 
             <h1>Soomin Song</h1>
-            <p className="contact-info">Wahiawa, HI 96786 | 510-606-0338 | <a target="_blank" rel="noreferrer" href="mailto:song.soomin.teapot418@gmail.com">song.soomin.teapot418@gmail.com</a> | <a href="https://nimoooos.work">https://nimoooos.work</a></p>
+            <p className="contact-info">Wahiawa, HI 96786 | 510-606-0338 | <a target="_blank" rel="noreferrer" href="mailto:song.soomin.teapot418@gmail.com">song.soomin.teapot418@gmail.com</a> | <a href="https://nimoooos.work/projects">https://nimoooos.work/projects</a></p>
             <p>{professionalSummary}</p>
             <hr />
             <h2>Experiences</h2>
