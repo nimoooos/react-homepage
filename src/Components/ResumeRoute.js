@@ -11,7 +11,7 @@ export default function ResumeRoute() {
                 "imgAlt": "COMP/CON Pull Request",
                 "imgSrc": "https://img.shields.io/badge/GitHub-Pull_Request-Black"
             },
-            "technologies": "Javascript(TypeScript, Vue), Node.js, GitHub",
+            "technologies": "Javascript(TypeScript, Vue), Node.js, VCS(Git, GitHub)",
             "roles": [
                 {
                     "role": "Open Source Contributor",
@@ -31,7 +31,7 @@ export default function ResumeRoute() {
                 "imgAlt": "Decommissioned",
                 "imgSrc": "https://img.shields.io/badge/Decommissioned-red"
             },
-            "technologies": "Java (SpringBoot), Javascript (Angular), Database (Postgres), Docker, GitLab, Linux (WSL, Ubuntu)",
+            "technologies": "Java (SpringBoot), Javascript (Angular), Database (Postgres), Docker, VCS(Git, GitLab), Linux (WSL, Ubuntu)",
             "roles": [
                 {
                     "role": "Maintainer, Transition Lead",
@@ -73,7 +73,7 @@ export default function ResumeRoute() {
                 "imgAlt": "Guadalcanal-Cup-Scoring Repository",
                 "imgSrc": "https://img.shields.io/badge/GitHub-black"
             },
-            "technologies": "Python (Flask), SQL (Postgres), HTML (CSS, bootstrap, Javascript), render.com",
+            "technologies": "Python (Flask), SQL (Postgres), HTML (CSS, bootstrap, Javascript), VCS(Git, GitHub), Web App Deployment(render.com)",
             "roles": [
                 {
                     "role": "Development Lead",
@@ -82,7 +82,7 @@ export default function ResumeRoute() {
                         "Developed a real-time web-based scoring application for 20 teams across 18 events",
                         "Implemented CRUD operations and score calculation algorithms",
                         "Identified and optimized database access bottleneck, reducing load time by up to 85%",
-                        "Added CSV export functionality to meet user request"
+                        "Successfully delivered on all user requests and ensured complicance with all regulations",
                     ]
                 }
             ]
@@ -94,7 +94,7 @@ export default function ResumeRoute() {
                 "imgAlt": "Proprietary",
                 "imgSrc": "https://img.shields.io/badge/Proprietary-lightgray"
             },
-            "technologies": "Javascript (React-CRA, bcrypt, Axios(REST API), Express, Node.js), Database (MongoDB, Postgres), HTML (CSS, bootstrap), GitHub, Docker",
+            "technologies": "Javascript (React-CRA, bcrypt, Axios(REST API), Express, Node.js), Database (MongoDB, Postgres), HTML (CSS, bootstrap), VCS(Git, GitHub), Docker",
             "roles": [
                 {
                     "role": "Frontend Developer",
