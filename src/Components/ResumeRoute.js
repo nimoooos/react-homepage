@@ -186,7 +186,7 @@ export default function ResumeRoute() {
         {
             title: "Personal Discord Chatbot",
             summary: "Created and maintained a discord bot that can pass info from a public API, hosted on AWS",
-            skills: "AWS EC2, API integration, Python, Asynchronous Programming"
+            skills: "Deployment (AWS EC2), API integration, Python, Asynchronous Programming"
         },
         {
             title: "Game Management",
@@ -196,7 +196,7 @@ export default function ResumeRoute() {
         {
             title: "Game Jam",
             summary: "Participated in multiple game jams, working together with new people each time",
-            skills: "Game Design (Godot Engine), Requirements Analysis, Project Management, Communication"
+            skills: "Game Design (Godot Engine), Requirements Analysis, Project Management, Communication, Organization"
         }
     ];
     function RenderOtherProjects() {
