@@ -3,6 +3,34 @@ import stylesheet from '../css/Resume.css'
 
 export default function ResumeRoute() {
     const professionalSummary = "Adaptive and versatile Full Stack Developer with comprehensive experience in web application development. Demonstrated success in leading projects to completion, migrating applications to new stacks, and improving user experiences. Proficient in JavaScript (React, TypeScript, jQuery, Node.js), Python, and Power Apps, with skills in tools including Node.js, Git, and Docker. Proven ability to streamline operations and contribute to collaborative development environments."
+    const experiences = [
+        {
+            title: "Full Stack Developer",
+            company: "USARPAC - Lightning Labs",
+            time: ["Jul 2023", "Current"],
+            bulletPoints: ["Led multiple projects from start to finish", "Coordinated with stakeholders to identify and deliver on requirements", "Navigated regulations to find optimal solutions given the constraints"]
+        }
+    ]
+    function RenderExperiences() {
+        const sectionTitle = "Experiences"
+        return (
+            <>
+                <h2 id={sectionTitle}>{sectionTitle}</h2>
+                {experiences.map((xp => {
+                    return (<>
+                        <h3 className="experience">{xp.title}</h3>
+                        <h4>{xp.company} ({xp.time[0]} - {xp.time[1]})</h4>
+                        <ul>
+                            {xp.bulletPoints.map(bullet => {
+                                return (<li>{bullet}</li>)
+                            })}
+                        </ul>
+                    </>
+                    )
+                }))}
+            </>
+        )
+    }
     const projects = [
         {
             "projectName": "COMP/CON",
@@ -11,15 +39,15 @@ export default function ResumeRoute() {
                 "imgAlt": "COMP/CON Pull Request",
                 "imgSrc": "https://img.shields.io/badge/GitHub-Pull_Request-Black"
             },
-            "technologies": "Javascript(TypeScript, Vue), Node.js, VCS(Git, GitHub)",
+            "technologies": "Javascript(TypeScript, Vue), Node.js, VCS (Git, GitHub)",
             "roles": [
                 {
                     "role": "Open Source Contributor",
                     "longDescription": "Enhanced the open-source project COMP/CON (a companion app for LANCER RPG) by implementing a feature that provides detailed description in NPC export, while preserving original functionality. This streamlined user experience for players by reducing the need to reference an external source during gameplay.",
                     "bulletPoints": [
-                        "Implemented non-breaking feature that adds expanded access to relevant information.",
-                        "Reduced user reliance on external references during operation.",
-                        "Followed commit guidelines and learned collaborative development practices during contribution."
+                        "Implemented non-breaking feature that adds expanded access to relevant information",
+                        "Reduced user reliance on external references during operation by up to 60%",
+                        "Followed commit guidelines and followed collaborative development practices during contribution"
                     ]
                 }
             ]
@@ -37,8 +65,8 @@ export default function ResumeRoute() {
                     "role": "Maintainer, Transition Lead",
                     "longDescription": "Led the maintenance of eTRIC for 6 months. Faced challenges as the sole maintainer of the project with minimal documentation, and eventually led to decommissioning of eTRIC due to resource constraints. Following the determination, immediately began identifying alternate solutions to continue the functionality of the project.",
                     "bulletPoints": [
-                        "Led the maintenance of eTRIC for 6 months, overcoming challenges as the sole maintainer with minimal documentation.",
-                        "Strategically decommissioned eTRIC, initiating immediate efforts to identify alternative solutions for project continuity."
+                        "Ensured cybersecurity compliance of production web app for 6 months, overcoming challenges as the sole maintainer",
+                        "Strategically decommissioned eTRIC, initiating immediate efforts to identify alternative solutions for project continuity"
                     ]
                 }
             ]
@@ -57,6 +85,7 @@ export default function ResumeRoute() {
                     "role": "Lead Developer",
                     "longDescription": "Led development of PATRIC in accordance with regulatory and end user requirements. Utilized ODATA queries for data retrieval and implemented CRUD functionality for bids, enabling administrators and bidders to manage bids efficiently. Created user-friendly data visualization through consistent feedback cycle, facilitating resource management for 30 entities, including Joint Forces such as the US Army, Navy, Marines, and Air Force, encompassing over 300 ranges and providing visualization of bidding activities.",
                     "bulletPoints": [
+                        "Created a clone of eTRIC in different platform under time constraints",
                         "Implemented CRUD functionality through ODATA queries to enable bid management by administrators and bidders",
                         "Developed user-friendly data by integrating user feedback throughout development cycle",
                         "Facilitated resource management for 30 entities, including Joint Forces branches, overseeing visualization of bidding activities for over 300 ranges",
@@ -72,7 +101,7 @@ export default function ResumeRoute() {
                 "imgAlt": "Guadalcanal-Cup-Scoring Repository",
                 "imgSrc": "https://img.shields.io/badge/GitHub-black"
             },
-            "technologies": "Python (Flask), SQL (Postgres), HTML (CSS, bootstrap, Javascript), VCS(Git, GitHub), Web App Deployment(render.com)",
+            "technologies": "Python (Flask), SQL (Postgres), HTML (CSS, Bootstrap, Javascript), VCS (Git, GitHub), Deployment (render.com)",
             "roles": [
                 {
                     "role": "Development Lead",
@@ -93,7 +122,7 @@ export default function ResumeRoute() {
                 "imgAlt": "Proprietary",
                 "imgSrc": "https://img.shields.io/badge/Proprietary-lightgray"
             },
-            "technologies": "Javascript (React-CRA, bcrypt, Axios(REST API), Express, Node.js), Database (MongoDB, Postgres), HTML (CSS, bootstrap), VCS(Git, GitHub), Docker",
+            "technologies": "Javascript (React-CRA, bcrypt, Axios(REST API), Express, Node.js), Database (MongoDB, Postgres), HTML (CSS, bootstrap), VCS (Git, GitHub), Docker",
             "roles": [
                 {
                     "role": "Frontend Developer",
@@ -117,31 +146,73 @@ export default function ResumeRoute() {
             ],
         }
     ]
-
-    const experiences = [
-        {
-            title: "Full Stack Developer",
-            company: "USARPAC - Lightning Labs",
-            time: ["Jul 2023", "Current"],
-            bulletPoints: ["Led multiple projects from start to finish", "Coordinated with stakeholders to identify and deliver on requirements", "Navigated regulations to find optimal solutions given the constraints"]
-        }
-    ]
-    function RenderExperiences() {
+    function RenderProjects() {
+        const sectionTitle = "Projects"
         return (
             <>
-                <h2>Experiences</h2>
-                {experiences.map((xp => {
+                <h2 id={sectionTitle}>{sectionTitle}</h2>
+                {projects.map((x) => {
                     return (<>
-                        <h3 className="experience">{xp.title}</h3>
-                        <h4>{xp.company} ({xp.time[0]} - {xp.time[1]})</h4>
-                        <ul>
-                            {xp.bulletPoints.map(bullet => {
-                                return (<li>{bullet}</li>)
-                            })}
-                        </ul>
+                        <h4 className="project">{x.projectName + " "}
+                            {
+                                x.repository.link ?
+                                    <Link to={x.repository.link}>
+                                        <img className="shieldBadge" alt={x.repository.imgAlt} src={x.repository.imgSrc} />
+                                    </Link> :
+                                    <img className="shieldBadge" alt={x.repository.imgAlt} src={x.repository.imgSrc} />
+                            }
+                        </h4>
+                        <h6 className="techStack">{x.technologies}</h6>
+                        {x.roles.map((y) => {
+                            return (
+                                <>
+                                    <h5 className="jobTitle">{y.role}</h5>
+                                    {/* <p>{y.longDescription}</p> */}
+                                    <ul>
+                                        {y.bulletPoints.map((z) => {
+                                            return <li>{z}</li>
+                                        })}
+                                    </ul>
+                                </>
+                            )
+                        })}
                     </>
                     )
-                }))}
+                })}
+            </>
+        )
+    }
+    const otherProjects = [
+        {
+            title: "Personal Discord Chatbot",
+            summary: "Created and maintained a discord bot that can pass info from a public API, hosted on AWS",
+            skills: "AWS EC2, API integration, Python, Asynchronous Programming"
+        },
+        {
+            title: "Game Management",
+            summary: "Acted as project manager, event planner, facilitator, writer, game developer, and technical support to support weekly teleconference sessions with multiple small teams",
+            skills: "Spreadsheet (Google Sheet w/ advanced formula), Image Editing (GIMP), Project Management, Mentoring, Game Design (narrative design/level design)",
+        },
+        {
+            title: "Game Jam",
+            summary: "Participated in multiple game jams, working together with new people each time",
+            skills: "Game Design (Godot Engine), Requirements Analysis, Project Management, Communication"
+        }
+    ];
+    function RenderOtherProjects() {
+        const sectionTitle = "Other Projects";
+        return (
+            <>
+                <h3 id={sectionTitle}>{sectionTitle}</h3>
+                {otherProjects.map(project => {
+                    return (
+                        <>
+                            <h5 className="jobTitle">{project.title}</h5>
+                            <h6 className="techStack">{project.skills}</h6>
+                            <p>{project.summary}</p>
+                        </>
+                    )
+                })}
             </>
         )
     }
@@ -155,42 +226,15 @@ export default function ResumeRoute() {
                 <li>Make contact info section smaller</li>
             </div>
 
-            <h1>Soomin Song</h1>
+            <h1>Soomin Song, <em>Full Stack Developer</em></h1>
             <p className="contact-info">Wahiawa, HI 96786 | 510-606-0338 | <a target="_blank" rel="noreferrer" href="mailto:song.soomin.teapot418@gmail.com">song.soomin.teapot418@gmail.com</a> | <a href="https://nimoooos.work/projects">https://nimoooos.work/projects</a></p>
             <p>{professionalSummary}</p>
             <hr />
             <RenderExperiences />
             <hr />
-            <h2>Projects</h2>
-            {projects.map((x) => {
-                return (<>
-                    <h4 className="project">{x.projectName + " "}
-                        {
-                            x.repository.link ?
-                                <Link to={x.repository.link}>
-                                    <img className="shieldBadge" alt={x.repository.imgAlt} src={x.repository.imgSrc} />
-                                </Link> :
-                                <img className="shieldBadge" alt={x.repository.imgAlt} src={x.repository.imgSrc} />
-                        }
-                    </h4>
-                    <h6 className="techStack">{x.technologies}</h6>
-                    {x.roles.map((y) => {
-                        return (
-                            <>
-                                <h5 className="jobTitle">{y.role}</h5>
-                                {/* <p>{y.longDescription}</p> */}
-                                <ul>
-                                    {y.bulletPoints.map((z) => {
-                                        return <li>{z}</li>
-                                    })}
-                                </ul>
-                            </>
-                        )
-                    })}
-                </>
-                )
-            })}
-
+            <RenderProjects />
+            <hr />
+            <RenderOtherProjects />
         </div>
 
     )
