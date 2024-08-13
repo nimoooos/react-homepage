@@ -121,7 +121,7 @@ export default function ResumeRoute() {
     ]
 
     return (
-        <div className="container container-md border border-secondary" style={stylesheet}>
+        <div className="container container-md border border-secondary m-3" style={stylesheet}>
             <div className="todo d-none">
                 <h1>TODO</h1>
                 <li>Turn entries into reusable components</li>
