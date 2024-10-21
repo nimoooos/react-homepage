@@ -1,4 +1,4 @@
-import Cats from "../Subcomponents/Cats";
+// import Cats from "../Subcomponents/Cats";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 

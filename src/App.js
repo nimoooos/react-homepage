@@ -8,12 +8,12 @@ import './App.css';
 
 //Component import
 import Navi from './Subcomponents/Navi';
-import HomeRoute from "./Components/HomeRoute";
-import DiscordArbitrationRoute from "./Components/DiscordArbitrationRoute";
-import LineOfSight from "./Components/LineOfSight";
+// import HomeRoute from "./Components/HomeRoute";
+// import DiscordArbitrationRoute from "./Components/DiscordArbitrationRoute";
+// import LineOfSight from "./Components/LineOfSight";
 import ResumeRoute from "./Components/ResumeRoute";
-import Ttrpg from "./Components/Ttrpg";
-import Beacon from "./Components/Ttrpg/Beacon";
+// import Ttrpg from "./Components/Ttrpg";
+// import Beacon from "./Components/Ttrpg/Beacon";
 
 function App() {
   return (
