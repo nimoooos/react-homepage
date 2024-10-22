@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navi() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary d-print-none">
       <Container>
         <Navbar.Brand><Link to="/">@nimoooos</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
