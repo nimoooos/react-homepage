@@ -24,6 +24,9 @@ function App() {
             <Route path="projects" element={<ResumeRoute/>} />
             <Route path="contacts" element={<Contacts/>} />
             <Route path="redirect" element={<Redirect/>}/>
+            <Route path="linkedin" element={<Redirect override="Linkedin"/>}/>
+            <Route path="github" element={<Redirect override="GitHub"/>}/>
+            <Route path="email" element={<Redirect override="email"/>}/>
           </Routes>
         </div>
       </Container>

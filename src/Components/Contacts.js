@@ -19,6 +19,11 @@ export default function Contacts() {
         link: "https://github.com/nimoooos/nimoooos/discussions",
         display: "https://github.com/nimoooos/nimoooos/discussions",
         name: "GitHub"
+    },
+    {
+        link: "https://www.nimoooos.work",
+        display: "https://www.nimoooos.work",
+        name: "Website"
     }
   ];
   const [qrValue, setQrValue] = useState(contacts[0]);
