@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export default function Redirect(props) {
+  // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams();
   const [timer, setTimer] = useState(0);
   const [continueRedirect, setContinueRedirect] = useState(true);
@@ -19,7 +20,6 @@ export default function Redirect(props) {
   try {
     query = searchParams.get("to").toLowerCase();
   } catch (error) {
-    setSearchParams(); // prevent warning
     query = props.override.toLowerCase();
   }
   const link = links[query]; // value based on key
