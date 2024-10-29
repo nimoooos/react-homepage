@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import stylesheet from '../css/Resume.css'
 
 export default function ResumeRoute() {
+    const city = "Santa Clara, CA 95050"
+    const phone = "510-606-0338"
     const email = "d.song.149@gmail.com"
     const professionalSummary="Adaptive and versatile Full Stack Developer with comprehensive experience in web application development. Demonstrated success in leading projects to completion, migrating applications to new stacks, and improving user experiences. Proficient in JavaScript (TypeScript, React, Vue, jQuery, Node.js), Python, and Power Apps, with skills in tools including Node.js, Git, and Docker. Proven ability to streamline operations and contribute to collaborative development environments."
     const projects = [
@@ -131,7 +133,7 @@ export default function ResumeRoute() {
             </div>
 
             <h1>Soomin Song</h1>
-            <p className="contact-info">Wahiawa, HI 96786 | 510-606-0338 | <a target="_blank" rel="noreferrer" href={`mailto:${email}`}>{email}</a> | <a href="https://nimoooos.work">https://nimoooos.work</a></p>
+            <p className="contact-info">{city} | {phone} | <a target="_blank" rel="noreferrer" href={`mailto:${email}`}>{email}</a> | <a href="https://nimoooos.work">https://nimoooos.work</a></p>
             <p>{professionalSummary}</p>
             <hr className="horizontalLine"/>
             <h2>Projects</h2>
