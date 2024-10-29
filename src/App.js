@@ -11,6 +11,7 @@ import Navi from './Subcomponents/Navi';
 // import HomeRoute from "./Components/HomeRoute";
 import ResumeRoute from "./Components/ResumeRoute";
 import Contacts from "./Components/Contacts";
+import Redirect from "./Components/Redirect";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/" element={<ResumeRoute/>} />
             <Route path="projects" element={<ResumeRoute/>} />
             <Route path="contacts" element={<Contacts/>} />
-            {/* </Route> */}
+            <Route path="redirect" element={<Redirect/>}/>
           </Routes>
         </div>
       </Container>
