@@ -9,11 +9,8 @@ import './App.css';
 //Component import
 import Navi from './Subcomponents/Navi';
 // import HomeRoute from "./Components/HomeRoute";
-// import DiscordArbitrationRoute from "./Components/DiscordArbitrationRoute";
-// import LineOfSight from "./Components/LineOfSight";
 import ResumeRoute from "./Components/ResumeRoute";
-// import Ttrpg from "./Components/Ttrpg";
-// import Beacon from "./Components/Ttrpg/Beacon";
+import Contacts from "./Components/Contacts";
 
 function App() {
   return (
@@ -23,11 +20,8 @@ function App() {
         <div className="AppRouter">
           <Routes>
             <Route path="/" element={<ResumeRoute/>} />
-            {/* <Route path="discord-arbitration" element={<DiscordArbitrationRoute/>} /> */}
-            {/* <Route path="line-of-sight" element={<LineOfSight/>} /> */}
             <Route path="projects" element={<ResumeRoute/>} />
-            {/* <Route path="ttrpg" element={<Ttrpg/>} > */}
-              {/* <Route path="beacon" element={<Beacon/>} /> */}
+            <Route path="contacts" element={<Contacts/>} />
             {/* </Route> */}
           </Routes>
         </div>
