@@ -2,16 +2,17 @@
 import { Routes, Route } from "react-router-dom";
 
 //react-bootstrap import
-import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/Container";
 
-import './App.css';
+import "./App.css";
 
 //Component import
-import Navi from './Subcomponents/Navi';
+import Navi from "./Subcomponents/Navi";
 // import HomeRoute from "./Components/HomeRoute";
 import ResumeRoute from "./Components/ResumeRoute";
 import Contacts from "./Components/Contacts";
 import Redirect from "./Components/Redirect";
+import HomeRoute from "./Components/HomeRoute";
 
 function App() {
   return (
@@ -20,13 +21,14 @@ function App() {
       <Container>
         <div className="AppRouter">
           <Routes>
-            <Route path="/" element={<ResumeRoute/>} />
-            <Route path="projects" element={<ResumeRoute/>} />
-            <Route path="contacts" element={<Contacts/>} />
-            <Route path="redirect" element={<Redirect/>}/>
-            <Route path="linkedin" element={<Redirect override="Linkedin"/>}/>
-            <Route path="github" element={<Redirect override="GitHub"/>}/>
-            <Route path="email" element={<Redirect override="email"/>}/>
+            <Route path="/" element={<ResumeRoute />} />
+            <Route path="projects" element={<ResumeRoute />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="redirect" element={<Redirect />} />
+            <Route path="linkedin" element={<Redirect override="Linkedin" />} />
+            <Route path="github" element={<Redirect override="GitHub" />} />
+            <Route path="email" element={<Redirect override="email" />} />
+            <Route path="home" element={<HomeRoute />} />
           </Routes>
         </div>
       </Container>
