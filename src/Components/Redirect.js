@@ -19,6 +19,7 @@ export default function Redirect(props) {
   try {
     query = searchParams.get("to").toLowerCase();
   } catch (error) {
+    setSearchParams(); // prevent warning
     query = props.override.toLowerCase();
   }
   const link = links[query]; // value based on key

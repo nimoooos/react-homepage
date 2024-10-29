@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import QRCode from "react-qr-code";
 import stylesheet from "../css/Contacts.css";
 
