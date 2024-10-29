@@ -12,9 +12,6 @@ export default function Navi() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="https://github.com/nimoooos">
-              <Button variant="dark">Github</Button>
-            </Nav.Link>
             <Nav.Item><Link to="/projects"><Button className='my-2 mx-2'>Resume</Button></Link></Nav.Item>
             <Nav.Item><Link to="/contacts"><Button className='my-2 mx-2'>Contacts</Button></Link></Nav.Item>
           </Nav>
