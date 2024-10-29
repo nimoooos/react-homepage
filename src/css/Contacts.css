@@ -1,0 +1,30 @@
+@counter-style selected {
+  system: cyclic;
+  symbols: »;
+  suffix: " ";
+}
+
+li.contacts {
+  font-size:xx-large;
+  list-style-type: circle;
+}
+
+li.selected,
+li.contacts:hover {
+  color: var(--bs-primary);
+  list-style: selected;
+}
+
+.link {
+  font-size:medium;
+  margin-left: 2rem;
+}
+
+#qrwrapper{
+  border: solid 1rem black;
+  padding: 1rem;
+}
+
+#qrwrapper p{
+  margin: 0.5rem 0 0 0;
+}
